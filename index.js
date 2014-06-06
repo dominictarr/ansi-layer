@@ -88,32 +88,34 @@ var Layer = module.exports = function (w, h) {
   }
 }
 
-function Combine (layers, w, h) {
-  var layer = Layer(w, h)
 
-  layer.charAt = function (x, y) {
-    var c
-    for(var l in layers)
-      if(c = layers[l].charAt(x, y))
-        return c
-  }
+var Combine = module.exports.Combine =
+  function (layers, w, h) {
+    var layer = Layer(w, h)
 
-  layer.flatten = function (x, y) {
-    for(var i = 0; i < w; i++) {
-      for(var j = 0; j < h; j++)
-        layer.put(layer.charAt(i, j), i, j)
+    layer.charAt = function (x, y) {
+      var c
+      for(var l in layers)
+        if(c = layers[l].charAt(x, y))
+          return c
     }
-    return this
-  }
 
-  var toString = layer.toString
-  layer.toString = function (x, y) {
-    layer.flatten()
-    return toString.call(layer)
-  }
+    layer.flatten = function (x, y) {
+      for(var i = 0; i < w; i++) {
+        for(var j = 0; j < h; j++)
+          layer.put(layer.charAt(i, j), i, j)
+      }
+      return this
+    }
 
-  return layer
-}
+    var toString = layer.toString
+    layer.toString = function (x, y) {
+      layer.flatten()
+      return toString.call(layer)
+    }
+
+    return layer
+  }
 
 
 if(!module.parent) {
