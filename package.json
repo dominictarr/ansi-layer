@@ -7,8 +7,13 @@
     "type": "git",
     "url": "git://github.com/dominictarr/ansi-layer.git"
   },
-  "dependencies": {},
-  "devDependencies": {},
+  "dependencies": {
+    "bresenham": "0.0.2",
+    "ansi-recover": "~1.1.0",
+    "quickansi": "~1.1.1"
+  },
+  "devDependencies": {
+  },
   "scripts": {
     "test": "set -e; for t in test/*.js; do node $t; done"
   },
