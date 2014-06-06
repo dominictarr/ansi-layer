@@ -1,7 +1,7 @@
 {
   "name": "ansi-layer",
   "description": "",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "https://github.com/dominictarr/ansi-layer",
   "repository": {
     "type": "git",
@@ -12,8 +12,7 @@
     "ansi-recover": "~1.1.0",
     "quickansi": "~1.1.1"
   },
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "scripts": {
     "test": "set -e; for t in test/*.js; do node $t; done"
   },
