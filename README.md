@@ -1,0 +1,6 @@
+# ansi-layer
+
+
+## License
+
+MIT
